@@ -1,5 +1,5 @@
 <template>
-    <ul>{{ user.name }}</ul>
+    <ul>{{ user.username }}</ul>
 </template>
 
 <script>

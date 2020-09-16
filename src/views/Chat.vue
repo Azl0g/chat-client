@@ -1,7 +1,7 @@
 <template>
     <div>
-       <UsersList :users="users" />
-       <MessageList :messages="messages"/>
+       <UsersList :users="store.users" />
+       <MessageList :messages="store.messages"/>
        <MessageBox @sendMessage="onSendMessage" />
     </div>
 </template>
@@ -12,26 +12,17 @@ import MessageBox from '../components/MessageBox'
 import MessageList from '../components/MessageList'
 import UsersList from '../components/UsersList'
 
+import store from '../store'
+
 export default {
   data () {
     return {
-      users: [
-        { name: 'Pierre' },
-        { name: 'Paul' },
-        { name: 'Jack' }
-      ],
-      messages: [
-        { user: { name: 'Pierre' }, text: 'Hey salut les nazes' },
-        { user: { name: 'Paul' }, text: 'slt' }
-      ]
+      store
     }
   },
   methods: {
     onSendMessage (text) {
-      this.messages.push({
-        user: { name: 'Robin L' },
-        text
-      })
+      store.messageNew(text)
     }
   },
   components: {
