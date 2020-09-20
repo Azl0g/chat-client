@@ -20,3 +20,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  ul{
+    // border: solid 3px lightgreen;
+    padding: 0;
+    // margin: auto;
+    // text-align: center;
+    overflow-y: scroll;
+    background-color: #2B3052;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>
